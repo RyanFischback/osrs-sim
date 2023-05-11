@@ -19,6 +19,16 @@ CREATE TABLE Items (
     imageURL VARCHAR(500) NOT NULL
 );
 
+-- Create the GrandExchangeItems (Auction House) table
+CREATE TABLE GrandExchangeItems (
+    id SERIAL PRIMARY KEY,
+    itemid INTEGER NOT NULL REFERENCES Items(id),
+    price INTEGER NOT NULL,
+    seller INTEGER NOT NULL REFERENCES Player(id), -- seller
+    -- count INTEGER NOT NULL, eventually let multiple of the same item but we'll do that later, lets test first
+    status VARCHAR(20) NOT NULL -- active / sold
+);
+
 -- Create the PlayerItems table
 CREATE TABLE PlayerItems (
     id SERIAL PRIMARY KEY,
