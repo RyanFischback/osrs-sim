@@ -24,9 +24,10 @@ CREATE TABLE "osrs-sim".GrandExchangeItems (
     id SERIAL PRIMARY KEY,
     itemid INTEGER NOT NULL REFERENCES Items(id),
     price INTEGER NOT NULL,
-    seller INTEGER NOT NULL REFERENCES Player(id), -- seller
-    -- count INTEGER NOT NULL, eventually let multiple of the same item but we'll do that later, lets test first
-    status VARCHAR(20) NOT NULL -- active / sold
+    seller INTEGER NOT NULL REFERENCES Player(id),
+    count INTEGER NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    countdown VARCHAR(20) NOT NULL
 );
 
 -- Create the PlayerItems table
