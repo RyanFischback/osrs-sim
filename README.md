@@ -1,10 +1,43 @@
-1.)	git clone
-2.)	Run the “npm install” command in the main directory of the project, as well as the “frontend” folder. This will install the required dependencies for running the project. 
-2.1) Run Create.sql & Data.sql scripts found in backend/db/scripts/ to create a local postgresql database. (I use pgAdmin) -- TODO: Update Create.sql to create the database as well. (Right now only creating schema)
-2.2.) Create a .env file inside of the main directory:
+# Project Setup
+
+To set up and run the project, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository_url>
+   
+2. Install dependencies:
+
+Run the following command in the **root** and **frontend** directories of the project: 
+   ```bash
+   npm install
+   ```
+
+3.) Set up the PostgreSQL database:
+
+3.1; Run the Create.sql and Data.sql scripts found in backend/db/scripts/ to create a local PostgreSQL database. 
+
+
+3.2; You can use tools like pgAdmin for this step. TODO: update Create.sql to create the database as well. 
+
+
+3.3; Create a .env file in the main directory of the project and provide the required PostgreSQL connection details:
+
 host=localhost
-port=
-dbname=
-user=
-password=
-3.)	After you have ran the “npm install” command in each of the three directories, you will now be able to run the project by typing the “npm run dev” command in the main directory
+port=<port_number>
+dbname=<database_name>
+user=<username>
+password=<password>
+  
+  
+3.4; Replace <port_number>, <database_name>, <username>, and <password> with your actual PostgreSQL connection details.
+
+4.) Run the project:
+
+After completing the previous steps, you can run the project by executing the following command in the main directory:
+  
+  ```
+  npm run dev
+  ```
+This command will start the backend and frontend together for easily development and general hosting
